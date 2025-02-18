@@ -51,8 +51,19 @@ const List = ({ navigation }) => {
 
 const NewItem = ({ item, navigation }) => {
   return (
+    // TouchableWithoutFeedback 是一个用于处理触摸事件的组件,主要功能是为其子组件添加触摸交互能力
+    // 常用属性及事件
+    // 常用属性
+    // accessible：一个布尔值，用于指定该组件是否可以被无障碍服务访问，默认为 true。
+    // accessibilityLabel：为无障碍服务提供一个文本标签，用于描述该组件的用途。
+    // 常用事件
+    // onPress：当用户点击或触摸该组件时触发的事件处理函数。
+    // onPressIn：当用户开始触摸该组件时触发的事件处理函数。
+    // onPressOut：当用户结束触摸该组件时触发的事件处理函数。
+    // onLongPress：当用户长按该组件时触发的事件处理函数。
     <TouchableWithoutFeedback
       onPress={(e) => {
+        // 导航跳转到search页
         navigation.navigate({ name: "Search", params: item });
       }}
     >

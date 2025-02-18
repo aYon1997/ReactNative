@@ -8,7 +8,8 @@
     "ios": "expo start --ios",
     "web": "concurrently \"set NODE_OPTIONS=--openssl-legacy-provider && expo start --web\" \"npm run server\"",
     "server": "node server/api.js",
-    "prestart": "set NODE_OPTIONS=--openssl-legacy-provider"
+    "prestart": "set NODE_OPTIONS=--openssl-legacy-provider",
+    "login": "npx expo login"
   },
   "dependencies": {
     "@ant-design/react-native": "^5.0.3",

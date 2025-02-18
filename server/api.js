@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const data = require("./data");
+const city = require("./city");
 
 const app = express();
 
@@ -11,6 +12,10 @@ app.use(cors());
 
 router.get("/api/list", (req, res) => {
   res.json({ data });
+});
+
+router.get("/api/city", (req, res) => {
+  res.json({ data: city });
 });
 
 app.use(router);

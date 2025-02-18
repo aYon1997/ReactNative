@@ -1,11 +1,6 @@
 import axios from "axios";
 
-const inst = axios.create({
-  headers: {
-    "User-Agent":
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
-  },
-});
+const inst = axios.create();
 
 inst.interceptors.response.use((resp) => resp.data);
 

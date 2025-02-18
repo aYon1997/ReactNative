@@ -1,12 +1,21 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, ScrollView, Platform } from "react-native";
+import React, { useEffect, useState } from "react";
+import City from "./city";
+
+import { apiGet } from "../../apis/request";
 
 const Dashboard = () => {
+  const [list = [], setList] = useState();
+  useEffect(() => {
+    apiGet({ path: "city" }).then((res) => {
+      setList(res.data);
+    });
+  }, []);
   return (
-    <View>
-      <Text>Dashboard</Text>
-    </View>
-  )
-}
+    <ScrollView>
+      <City list={list} />
+    </ScrollView>
+  );
+};
 
-export default Dashboard
+export default Dashboard;
